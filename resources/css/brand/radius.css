@@ -1,0 +1,12 @@
+/* ============================================================
+ * THEME INLINE - Radius Tokens
+ * - Defines base border-radius values for the UI components
+ * - Provides semantic sizes (sm, md, lg) for consistency
+ * - Adjusting the base radius (--radius) updates all derived sizes
+ * ============================================================ */
+@theme inline {
+    --radius: 0.5rem;
+    --radius-lg: var(--radius);
+    --radius-md: calc(var(--radius) - 2px);
+    --radius-sm: calc(var(--radius) - 4px);
+}

@@ -1,12 +1,12 @@
 <script setup lang="ts">
 import PasswordController from '@/actions/App/Http/Controllers/Settings/PasswordController';
-import InputError from '@/components/InputError.vue';
-import AppLayout from '@/layouts/AppLayout.vue';
-import SettingsLayout from '@/layouts/settings/Layout.vue';
+import InputError from '@/components/dashboard/InputError.vue';
+import DashboardLayout from '@/layouts/DashboardLayout.vue';
+import SettingsLayout from '@/layouts/dashboard/settings/Layout.vue';
 import { edit } from '@/routes/user-password';
 import { Form, Head } from '@inertiajs/vue3';
 
-import HeadingSmall from '@/components/HeadingSmall.vue';
+import HeadingSmall from '@/components/dashboard/HeadingSmall.vue';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -21,7 +21,7 @@ const breadcrumbItems: BreadcrumbItem[] = [
 </script>
 
 <template>
-    <AppLayout :breadcrumbs="breadcrumbItems">
+    <DashboardLayout :breadcrumbs="breadcrumbItems">
         <Head title="Password settings" />
 
         <SettingsLayout>
@@ -110,5 +110,5 @@ const breadcrumbItems: BreadcrumbItem[] = [
                 </Form>
             </div>
         </SettingsLayout>
-    </AppLayout>
+    </DashboardLayout>
 </template>

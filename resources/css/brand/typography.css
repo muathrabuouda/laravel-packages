@@ -1,0 +1,130 @@
+/* ============================================================
+ * THEME INLINE - Typography Tokens
+ * - Defines font families and text sizes for consistent typography
+ * - Uses semantic naming for headings, body text, captions, and callouts
+ * - Responsive sizes with clamp() ensure scalability across screen widths
+ * ============================================================ */
+@theme inline {
+    /* Font Family */
+    --font-sans: Zain, Instrument Sans, ui-sans-serif, system-ui, sans-serif,
+        'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+
+    /* Text Sizes (responsive using clamp) */
+    /* Hero / main headings 48px–80px */
+    --text-hero-size: clamp(3rem, 5vw + 2rem, 5rem);
+    /* 48px–80px */
+
+    /* Title 32px–48px */
+    --text-title-size: clamp(2rem, 4vw + 1.5rem, 3rem);
+    /* 32px–48px */
+
+    /* Subtitle 28px–40px */
+    --text-subtitle-size: clamp(1.75rem, 3vw + 1rem, 2.5rem);
+    /* 28px–40px */
+
+    /* Headline 24px–32px */
+    --text-head-size: clamp(1.5rem, 2.5vw + 0.75rem, 2rem);
+    /* 24px–32px */
+
+    /* Subhead 20px–28px */
+    --text-subhead-size: clamp(1.25rem, 2vw + 0.5rem, 1.75rem);
+    /* 20px–28px */
+
+    /* Body Extra 18px–24px */
+    --text-body-extra-size: clamp(1.125rem, 1.25rem + 2vw, 1.5rem);
+    /* 18px–24px */
+
+    /* Body text 16px–20px */
+    --text-body-size: clamp(1rem, 1.25vw + 0.25rem, 1.25rem);
+    /* 16px–20px */
+
+    /* Callout / highlight 14px–16px */
+    --text-callout-size: clamp(0.875rem, 1vw + 0.25rem, 1rem);
+    /* 14px–16px */
+
+    /* Small callout 12px–14px */
+    --text-small-callout-size: clamp(0.75rem, 0.8vw + 0.25rem, 0.875rem);
+    /* 12px–14px */
+
+    /* Caption 10px–12px */
+    --text-caption-size: clamp(0.625rem, 0.6vw + 0.25rem, 0.75rem);
+    /* 10px–12px */
+
+    /* Small caption 8px–10px */
+    --text-small-caption-size: clamp(0.5rem, 0.5vw + 0.25rem, 0.625rem);
+    /* 8px–10px */
+
+}
+
+/* ============================================================
+ * FONT FACES - Zain Font Family
+ * - Defines multiple font weights and styles for the Zain font
+ * - Ensures proper loading of different font variations
+ * - Provides a consistent typographic style across the application
+ * ============================================================ */
+@layer base {
+
+    /* Zain Font - Extra Light (Weight 200) */
+    @font-face {
+        font-family: 'Zain';
+        src: url('../../fonts/Zain/extra_light.ttf') format('truetype');
+        font-weight: 200;
+        font-style: normal;
+    }
+
+    /* Zain Font - Light (Weight 300, Normal) */
+    @font-face {
+        font-family: 'Zain';
+        src: url('../../fonts/Zain/light.ttf') format('truetype');
+        font-weight: 300;
+        font-style: normal;
+    }
+
+    /* Zain Font - Light Italic (Weight 300, Italic) */
+    @font-face {
+        font-family: 'Zain';
+        src: url('../../fonts/Zain/light_italic.ttf') format('truetype');
+        font-weight: 300;
+        font-style: italic;
+    }
+
+    /* Zain Font - Regular (Weight 400, Normal) */
+    @font-face {
+        font-family: 'Zain';
+        src: url('../../fonts/Zain/regular.ttf') format('truetype');
+        font-weight: 400;
+        font-style: normal;
+    }
+
+    /* Zain Font - Regular Italic (Weight 400, Italic) */
+    @font-face {
+        font-family: 'Zain';
+        src: url('../../fonts/Zain/italic.ttf') format('truetype');
+        font-weight: 400;
+        font-style: italic;
+    }
+
+    /* Zain Font - Bold (Weight 700) */
+    @font-face {
+        font-family: 'Zain';
+        src: url('../../fonts/Zain/bold.ttf') format('truetype');
+        font-weight: 700;
+        font-style: normal;
+    }
+
+    /* Zain Font - Extra Bold (Weight 800) */
+    @font-face {
+        font-family: 'Zain';
+        src: url('../../fonts/Zain/extra_bold.ttf') format('truetype');
+        font-weight: 800;
+        font-style: normal;
+    }
+
+    /* Zain Font - Black (Weight 900) */
+    @font-face {
+        font-family: 'Zain';
+        src: url('../../fonts/Zain/black.ttf') format('truetype');
+        font-weight: 900;
+        font-style: normal;
+    }
+}

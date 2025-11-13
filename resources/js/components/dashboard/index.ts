@@ -1,0 +1,7 @@
+export { default as DashboardContent } from "./DashboardContent.vue"
+export { default as DashboardHeader } from "./DashboardHeader.vue"
+export { default as DashboardLogo } from "./DashboardLogo.vue"
+export { default as DashboardLogoIcon } from "./DashboardLogoIcon.vue"
+export { default as DashboardSidebar } from "./DashboardSidebar.vue"
+export { default as DashboardShell } from "./DashboardShell.vue"
+export { default as DashboardSidebarHeader } from "./DashboardSidebarHeader.vue"

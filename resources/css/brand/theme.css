@@ -1,0 +1,206 @@
+/* ============================================================
+ * Custom Variant
+ * Defines a "dark" variant that applies styles when .dark class
+ * is present on the parent element (similar to dark mode switch)
+ * ============================================================ */
+@custom-variant dark (&:is(.dark *));
+
+/* ============================================================
+ * THEME INLINE (Color Palette Mapping)
+ * - Provides semantic color variables (e.g., success, error, info)
+ * - Maps them to base colors (defined in :root and .dark)
+ * - Ensures consistent branding across components and UI states
+ * ============================================================ */
+@theme inline {
+
+    /* Text system */
+    --color-text: var(--color-brand-text);
+    --color-text-foreground: var(--color-brand-text);
+
+    /* Global backgrounds & foregrounds */
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+
+    /* Component-level tokens */
+    --color-card: var(--card);
+    --color-card-foreground: var(--card-foreground);
+    --color-popover: var(--popover);
+    --color-popover-foreground: var(--popover-foreground);
+
+    /* Brand colors */
+    --color-primary: var(--primary);
+    --color-primary-foreground: var(--primary-foreground);
+    --color-secondary: var(--secondary);
+    --color-secondary-foreground: var(--secondary-foreground);
+
+    /* Neutral / muted */
+    --color-muted: var(--muted);
+    --color-muted-foreground: var(--muted-foreground);
+    --color-accent: var(--accent);
+    --color-accent-foreground: var(--accent-foreground);
+
+    /* Status-based colors */
+    --color-destructive: var(--destructive);
+    --color-destructive-foreground: var(--destructive-foreground);
+    --color-success: var(--color-green);
+    --color-success-foreground: var(--success-foreground);
+    --color-error: var(--color-orange);
+    --color-error-foreground: var(--error-foreground);
+    --color-warning: var(--color-yellow);
+    --color-warning-foreground: var(--warning-foreground);
+    --color-info: var(--color-blue);
+    --color-info-foreground: var(--info-foreground);
+
+    /* Form / border tokens */
+    --color-border: var(--border);
+    --color-input: var(--input);
+    --color-ring: var(--ring);
+
+    /* Chart-specific colors */
+    --color-chart-1: var(--chart-1);
+    --color-chart-2: var(--chart-2);
+    --color-chart-3: var(--chart-3);
+    --color-chart-4: var(--chart-4);
+    --color-chart-5: var(--chart-5);
+
+    /* Sidebar-specific tokens */
+    --color-sidebar: var(--sidebar-background);
+    --color-sidebar-foreground: var(--sidebar-foreground);
+    --color-sidebar-primary: var(--sidebar-primary);
+    --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+    --color-sidebar-accent: var(--sidebar-accent);
+    --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+    --color-sidebar-border: var(--sidebar-border);
+    --color-sidebar-ring: var(--sidebar-ring);
+}
+
+/* ============================================================
+ * ROOT THEME (Default Light Mode)
+ * - Defines actual HEX/HSL values for base colors
+ * - Semantic tokens (primary, success, warning, etc.) are mapped here
+ * - Light mode is default
+ * ============================================================ */
+:root {
+    --background: var(--white);
+    --foreground: var(--black);
+
+    /* Components */
+    --card: var(--white);
+    --card-foreground: var(--gray);
+    --popover: var(--white);
+    --popover-foreground: var(--black);
+
+    /* Brand colors */
+    --primary: var(--blue);
+    --primary-foreground: hsl(var(--primary), 25%);
+    --secondary: var(--cyan);
+    --secondary-foreground: hsl(var(--secondary), 25%);
+
+    /* Status colors */
+    --success: var(--green);
+    --success-foreground: hsl(var(--success), 25%);
+    --info: var(--blue);
+    --info-foreground: hsl(var(--info), 25%);
+    --muted: var(--gray);
+    --muted-foreground: hsl(var(--muted), 25%);
+    --accent: var(--gray);
+    --accent-foreground: hsl(var(--accent), 25%);
+    --warning: var(--yellow);
+    --warning-foreground: hsl(var(--warning), 25%);
+    --error: var(--orange);
+    --error-foreground: hsl(var(--error), 25%);
+    --destructive: var(--red);
+    --destructive-foreground: hsl(var(--destructive), 25%);
+
+    /* Utility */
+    --border: var(--gray);
+    --input: var(--gray);
+    --ring: var(--primary);
+
+    /* Charts */
+    --chart-1: hsl(12 76% 61%);
+    --chart-2: hsl(173 58% 39%);
+    --chart-3: hsl(197 37% 24%);
+    --chart-4: hsl(43 74% 66%);
+    --chart-5: hsl(27 87% 67%);
+
+    /* Sidebar */
+    --sidebar-background: var(--gray);
+    --sidebar-foreground: var(--black);
+    --sidebar-primary: var(--white);
+    --sidebar-primary-foreground: var(--black);
+    --sidebar-accent: var(--brand-white);
+    --sidebar-accent-foreground: var(--black);
+    --sidebar-border: var(--gray);
+    --sidebar-ring: var(--blue);
+    --sidebar: var(--white);
+}
+
+/* ============================================================
+ * DARK THEME
+ * - Overrides the default :root variables when .dark is active
+ * - Provides dark-mode equivalents for backgrounds, components, and states
+ * - Ensures accessibility and proper contrast in dark UI
+ * ============================================================ */
+.dark {
+    --background: var(--black-hard);
+    --foreground: var(--white);
+
+    /* Components */
+    --card: hsl(var(--black-hard), 75%);
+    --card-foreground: var(--gray);
+    --popover: var(--black);
+    --popover-foreground: var(--white);
+
+    /* Status colors */
+    --success: var(--green);
+    --success-foreground: hsl(var(--success), 25%);
+    --info: var(--blue);
+    --info-foreground: hsl(var(--info), 25%);
+    --muted: var(--black);
+    --muted-foreground: hsl(var(--muted), 25%);
+    --accent: var(--gray);
+    --accent-foreground: hsl(var(--accent), 25%);
+    --warning: var(--yellow);
+    --warning-foreground: hsl(var(--warning), 25%);
+    --error: var(--orange);
+    --error-foreground: hsl(var(--error), 25%);
+    --destructive: var(--red);
+    --destructive-foreground: hsl(var(--destructive), 25%);
+
+    /* Utility */
+    --border: var(--gray);
+    --input: var(--gray);
+    --ring: var(--primary);
+
+    /* Charts */
+    --chart-1: hsl(12 76% 61%);
+    --chart-2: hsl(173 58% 39%);
+    --chart-3: hsl(197 37% 24%);
+    --chart-4: hsl(43 74% 66%);
+    --chart-5: hsl(27 87% 67%);
+
+    /* Sidebar */
+    --sidebar-background: var(--black);
+    --sidebar-foreground: var(--white);
+    --sidebar-primary: var(--black-hard);
+    --sidebar-primary-foreground: var(--white);
+    --sidebar-accent: var(--white);
+    --sidebar-accent-foreground: var(--black);
+    --sidebar-border: var(--black);
+    --sidebar-ring: var(--blue);
+    --sidebar: var(--black);
+}
+
+/* ==========================================================
+ * NProgress Gradient Bar
+ * - Applies a left-to-right gradient on the Inertia.js/NProgress loading bar
+ * - Starts with dark blue (#0f55f7) and ends with light blue (#66d9fd)
+ * - Provides a visually appealing dynamic effect instead of a single color
+ * - Selector targets the NProgress bar element inside #nprogress container
+ * ========================================================== */
+@layer base {
+    #nprogress .bar {
+        background: linear-gradient(to right, var(--blue), var(--cyan));
+    }
+}
