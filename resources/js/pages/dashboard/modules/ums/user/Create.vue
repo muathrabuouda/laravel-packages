@@ -1,14 +1,13 @@
 <script setup lang="ts">
 import { Head } from '@inertiajs/vue3';
-
 import HeadingSmall from '@/components/dashboard/HeadingSmall.vue';
 import { Button } from '@/components/ui/button';
 import DashboardLayout from '@/layouts/DashboardLayout.vue';
 import { Separator } from '@/components/ui/separator'
-import Read from './partials/read/Index.vue';
+import { Create } from './partials';
+import { index } from '@/routes/users'
 import { type BreadcrumbItem } from '@/types';
 import { type UserCollection } from '@/types/models/user';
-import { create } from "@/routes/users";
 
 interface Props {
     users: UserCollection;
@@ -21,23 +20,30 @@ const breadcrumbItems: BreadcrumbItem[] = [
         title: 'Users',
         href: '/dashboard/user',
     },
+    {
+        title: 'Add New User',
+        href: '/dashboard/user/create',
+    },
 ];
 </script>
 
 <template>
     <DashboardLayout :breadcrumbs="breadcrumbItems">
         <Head title="Users" />
-        <div class="hidden h-full flex-1 flex-col space-y-8 p-8 sm:flex">
-            <div class="flex items-center justify-between space-y-2">
-                <div>
-                    <HeadingSmall title="Users" description="Update your name and email address" />
-                </div>
-                <div class="flex items-center space-x-2">
-                    <Button as="a" :href="create.url()" variant="default">Create</Button>
+        <div class="h-full p-8 space-y-8">
+            <div class="hidden flex-1 flex-col sm:flex">
+                <div class="flex items-center justify-between space-y-2">
+                    <div>
+                        <HeadingSmall title="Add New User"
+                            description="Fill in the required information to create a new user account" />
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <Button as="a" :href="index.url()" variant="default">Index</Button>
+                    </div>
                 </div>
             </div>
-            <Separator/>
-            <Read :users="users" />
+            <Separator />
+            <Create />
         </div>
     </DashboardLayout>
 </template>

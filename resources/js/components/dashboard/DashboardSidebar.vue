@@ -13,6 +13,7 @@ import {
     SidebarMenuItem,
 } from '@/components/ui/sidebar';
 import { dashboard } from '@/routes';
+import { index } from '@/routes/users'
 import { type NavItem } from '@/types';
 import { Link } from '@inertiajs/vue3';
 import {BookOpen, Folder, LayoutGrid, User2} from 'lucide-vue-next';
@@ -25,7 +26,7 @@ const mainNavItems: NavItem[] = [
     },
     {
         title: 'Users',
-        href: '/dashboard/user',
+        href: index(),
         icon: User2,
     },
 ];

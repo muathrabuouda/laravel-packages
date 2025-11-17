@@ -84,7 +84,7 @@ export const columns: ColumnDef<User>[] = [
         accessorKey: 'status',
         header: ({ column }) => h(DataTableColumnHeader, { column, title: 'Status' }),
         cell: ({ row }) => {
-            return h(Badge, { variant: row.getValue('status') ? 'secondary' : 'destructive' }, () => row.getValue('status') ? 'Active' : 'Inactive')
+            return h(Badge, { variant: row.getValue('status') ? 'success' : 'destructive' }, () => row.getValue('status') ? 'Active' : 'Inactive')
         },
         filterFn: (row, id, value) => {
             return value.includes(row.getValue(id))

@@ -3,7 +3,7 @@
 return [
     App\Providers\AppServiceProvider::class,
     App\Providers\FortifyServiceProvider::class,
-    App\Providers\RepositoryServiceProvider::class,
-    App\Providers\UsecaseServiceProvider::class,
+    Levant\Providers\RepositoryServiceProvider::class,
+    Levant\Providers\UsecaseServiceProvider::class,
     UMS\Providers\ModuleServiceProvider::class,
 ];

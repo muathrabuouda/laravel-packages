@@ -5,6 +5,6 @@
  * - Ensures consistent styling and easy maintenance across the project
  * ============================================================ */
 @import './typography.css';  /* Typography tokens (fonts, text sizes) */
-/*@import './color.css';       !* Color palette and semantic color variables *!*/
+@import './color.css';       /* Color palette and semantic color variables */
 @import './theme.css';       /* Theme variables (light & dark modes) */
 @import './radius.css';      /* Border-radius / corner radius tokens */

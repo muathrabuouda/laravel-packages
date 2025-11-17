@@ -26,6 +26,20 @@ import { Form, Head } from '@inertiajs/vue3';
         >
             <div class="grid gap-6">
                 <div class="grid gap-2">
+                    <Label for="name">Username</Label>
+                    <Input
+                        id="username"
+                        type="text"
+                        required
+                        autofocus
+                        :tabindex="1"
+                        autocomplete="username"
+                        name="username"
+                        placeholder="@muathabuouda"
+                    />
+                    <InputError :message="errors.username" />
+                </div>
+                <div class="grid gap-2">
                     <Label for="name">Name</Label>
                     <Input
                         id="name"

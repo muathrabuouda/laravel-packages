@@ -10,5 +10,4 @@ Route::get('/', function () {
     ]);
 })->name('home');
 
-require __DIR__.'/settings.php';
 require __DIR__.'/dashboard.php';

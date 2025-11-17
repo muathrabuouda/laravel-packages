@@ -1,0 +1,6 @@
+[submodule "modules/core"]
+	path = modules/core
+	url = git@github.com:levantphp/core-module.git>
+[submodule "modules/ums"]
+	path = modules/ums
+	url = git@github.com:levantphp/ums-module.git
